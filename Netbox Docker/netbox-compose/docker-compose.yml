@@ -17,6 +17,7 @@ services:
     - 80:8080
     volumes:
     - ./netbox-media-files:/opt/netbox/netbox/media:z
+    #restart: always
 
 
   # postgres
@@ -25,6 +26,7 @@ services:
     env_file: env/postgres.env
     volumes:
     - ./netbox-postgres-data:/var/lib/postgresql/data
+    #restart: always
 
   # redis
   redis:
@@ -45,3 +47,4 @@ services:
     env_file: env/redis-cache.env
     volumes:
     - ./netbox-redis-cache-data:/data
+    #restart: always
